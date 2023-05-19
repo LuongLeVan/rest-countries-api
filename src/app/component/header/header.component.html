@@ -1,0 +1,15 @@
+<div class="p-4 w-full h-12 shadow-md fixed top-0 left-0 right-0 bottom-0 z-40" [ngClass]="isDarkMode ? 'border-b bg-black border-white shadow-md' : ''">
+    <div class="flex justify-between">
+        <h3 class="text-black font-semibold text-lg " [ngClass]="isDarkMode ? 'text-white' : 'text-green-200' ">Where in the world?</h3>
+        <div class="flex justify-center items-center">
+            <span class="text-yellow-400 mr-2" *ngIf="!isDarkMode" (click)="setDarkMode()">
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+            </span>
+            <span class="text-yellow-400 mr-2" *ngIf="isDarkMode" (click)="setDarkMode()">
+                <i class="fa fa-sun-o" aria-hidden="true"></i>
+
+            </span>
+            <p class="text-black" [ngClass]="isDarkMode ? 'text-white' : 'text-green-200' ">Dark Mode</p>
+        </div>
+    </div>
+</div>

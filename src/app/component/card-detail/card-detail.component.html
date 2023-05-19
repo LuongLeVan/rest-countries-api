@@ -1,0 +1,47 @@
+<app-header class="bg-white"></app-header>
+<div class="w-full min-h-[1000px] px-6 py-[100px] bg-[#1f2d36] text-white">
+  <button class="flex justify-center rounded-md items-center bg-[#2c3743] text-white px-3 py-2">
+    <a routerLink='/'>
+        <span class="text-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> </span>
+        <span class="ml-2">Back</span>
+    </a>
+  </button>
+  <div class="mt-4 md:flex" *ngFor="let item of country | async">
+    <div class="md:w-[50%]">
+        <img [src]="item.flags.png" class="rounded-md w-full h-[200px] md:h-[300px]" alt="" />
+        <div class="text-center text-xs px-2 md:text-sm">{{item.flags.alt}}</div>
+    </div>
+    <div class="md:w-[50%] md:ml-24">
+      <h3 class="text-2xl font-medium mb-3 mt-4">{{ item.name.common }}</h3>
+
+      <span class="block text-base font-medium mb-3"
+        >Official Name: {{ item.name.official }}</span
+      >
+
+     <!--  <span class="block text-base font-medium mb-3"
+      >Currencies: {{ item.name.official }}</span
+    > -->
+      <span class="block text-base font-medium mb-3"
+        >Native Population: {{ item.population | number }}</span
+      >
+
+      <span class="block text-base font-medium mb-3">Region: {{ item.region }}</span>
+      
+      <span class="block text-base font-medium mb-3"
+        >Sub Region: {{ item.subregion }}</span
+      >
+      <span class="block text-base font-medium mb-3"
+        >Capital: {{ item.capital }}</span
+      >
+
+      <!-- <span class="block text-base font-medium mb-3"
+        >Currencies: {{ currencies }}</span
+      > -->
+      <span class="block text-base font-medium mb-3"
+        >Maps: 
+        <a [href]="item.maps.googleMaps" target="_blank" rel="noopener noreferrer">{{item.maps.googleMaps}}</a>
+        </span
+      >
+    </div>
+  </div>
+</div>

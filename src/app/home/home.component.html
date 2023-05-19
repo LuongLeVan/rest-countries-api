@@ -1,0 +1,27 @@
+<app-header (isDarkModeChange)="onDarkMode($event)"></app-header>
+<div class="w-full min-h-[1000px] px-6" [ngClass]="isDarkModes ? 'bg-black' : '' ">
+    <div class="flex justify-between items-center py-20">
+        <div class="w-[400px] h-[50px] bg-white px-3 shadow-md rounded-md mr-3 ">
+            <span class="text-gray-400"><i class="fa fa-search"></i></span>
+            <input [(ngModel)]="countryName" (change)="handleSearch()" class="rounded-md  outline-none p-3 w-[91%] md:w-[95%]" type="text" placeholder="Search for a country...">
+        </div>
+        <div>
+         
+              <select (change)="handleFilterBySelect($event)" name="" id="" class="px-8 py-3 rounded-md shadow-sm outline-none">
+                <option value="All Region" >All Region</option>
+                <option value="Africa">Africa</option>
+                <option value="America">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+              </select>
+              
+        </div>
+    </div>
+    <div *ngIf="isEmptyObject" class="text-center font-semibold text-xl">No Result With Your Query</div>
+    <div class="grid md:grid-cols-3 md:gap-3 md:grid-rows-2 lg:grid-cols-4 lg:gap-4 lg:grid-rows-2">
+        <div  *ngFor="let item of countriesList | async">
+            <app-card [isDarkMode]="isDarkModes" [country]="item.name.common" [quantity]="item.population" [image]="item.flags.png" [region]="item.region" [capital]="item.capital"></app-card>
+        </div>
+    </div>
+</div>
