@@ -15,6 +15,7 @@ export class CardDetailComponent implements OnInit {
   currencies:any = '';
   result:any = '';
   title:any = '';
+  isDarkMode:boolean = false;
 
   constructor(private dataService: DataService, private route: ActivatedRoute){}
   
@@ -25,17 +26,15 @@ export class CardDetailComponent implements OnInit {
     this.countriesList = this.dataService.getAllCountries();
     this.country = this.dataService.getDetailCountry(this.name);
     this.country.subscribe((data:any) => {
-      console.log(data[0].currencies);
       this.currencies = data[0].currencies.EUR.name;
-      console.log(this.currencies.EUR.name);
-      
-
-    
-      
     })
+    
+    
+    
+  }
 
-    
-    
+  onDarkMode($event:any){
+    this.isDarkMode = $event;
   }
 
 }

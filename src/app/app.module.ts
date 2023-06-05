@@ -10,7 +10,7 @@ import { CardComponent } from './component/card/card.component';
 import { HomeComponent } from './home/home.component';
 import { CardDetailComponent } from './component/card-detail/card-detail.component';
 import { HeaderComponent } from './component/header/header.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,9 @@ import { HeaderComponent } from './component/header/header.component';
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

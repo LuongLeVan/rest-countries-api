@@ -16,7 +16,6 @@ export class HeaderComponent {
     this.dataService.setDarkModeStatus();
     this.isDarkMode = this.dataService.getStatusDarkMode();
     this.isDarkModeChange.emit(this.isDarkMode);
-    console.log(this.isDarkMode);
     
     
   }

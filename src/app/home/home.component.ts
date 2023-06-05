@@ -50,7 +50,6 @@ export class HomeComponent implements OnInit {
       
     })
     this.option = $event.target.value;
-    console.log(this.option);
 
     if (this.option === 'All Region') {
       if (this.countryName.length > 0){
@@ -75,7 +74,6 @@ export class HomeComponent implements OnInit {
 
   onDarkMode(isDarkMode: boolean) {
     this.isDarkModes = isDarkMode;
-    console.log(this.isDarkModes);
 
   }
 

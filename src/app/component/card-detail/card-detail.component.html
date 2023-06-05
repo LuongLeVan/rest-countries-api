@@ -1,5 +1,5 @@
-<app-header class="bg-white"></app-header>
-<div class="w-full min-h-[1000px] px-6 py-[100px] bg-[#1f2d36] text-white">
+<app-header class="bg-white" (isDarkModeChange)="onDarkMode($event)"></app-header>
+<div class="w-full min-h-[1000px] px-6 py-[100px] bg-[#1f2d36] text-green-200" [ngClass]="isDarkMode ? 'bg-black text-white' : '' ">
   <button class="flex justify-center rounded-md items-center bg-[#2c3743] text-white px-3 py-2">
     <a routerLink='/'>
         <span class="text-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> </span>
